@@ -21,8 +21,30 @@
     },
     "license": "MIT",
     "dependencies": {
-        "atom-languageclient": "^0.9.9"
+        "@types/atom": "^1.28.0",
+        "@types/node": "^13.1.1",
+        "atom-languageclient": "^0.9.9",
+        "reflect-metadata": "^0.1.12",
+        "tsyringe": "^4.0.1"
     },
+    "devDependencies": {
+        "atom-ts-transpiler": "^1.5.2",
+        "typescript": "^3.2.2"
+    },
+    "atomTranspilers": [
+        {
+            "transpiler": "atom-ts-transpiler",
+            "glob": "{!(node_modules)/**/,}*.ts?(x)",
+            "options": {
+                "compilerOptions": {
+                    "target": "es6",
+                    "module": "commonjs"
+                },
+                "cacheKeyFiles": [],
+                "verbose": false
+            }
+        }
+    ],
     "enhancedScopes": [
         "source.go",
         "go"
@@ -55,12 +77,7 @@
                 "2.0.0": "provideAutocomplete"
             }
         },
-        "code-format.range": {
-            "versions": {
-                "0.1.0": "provideCodeFormat"
-            }
-        },
-        "code-format.onSave": {
+        "code-format.file": {
             "versions": {
                 "0.1.0": "provideOnSaveCodeFormat"
             }
