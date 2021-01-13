@@ -1,6 +1,6 @@
 import * as pkg from '../package.json'
 
-function parseEnv(source: string) {
+export function parseEnv(source: string) {
     let env = {}
 
     let vars = source.split('\n').filter((el) => { return el != '' })
@@ -15,9 +15,6 @@ function parseEnv(source: string) {
     return env
 }
 
-function getPluginConfigValue(key: string): any {
+export function getPluginConfigValue(key: string): any {
     return atom.config.get(`${pkg.name}.${key}`)
 }
-
-exports.parseEnv = parseEnv
-exports.getPluginConfigValue = getPluginConfigValue
