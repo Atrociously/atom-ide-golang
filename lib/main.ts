@@ -19,11 +19,24 @@ module.exports.config = {
         description: 'Custom path to the go home',
         type: 'string',
         default: '',
+        order: 1,
     },
-    doFormat: {
-        title: 'Formatting',
-        description: 'Set whether the language server formats code',
-        type: 'boolean',
-        default: true,
+    formatTool: {
+        title: 'Format Tool',
+        description: 'Set the desired format tool',
+        type: 'string',
+        default: 'goimports',
+        enum: ['gofmt', 'goimports', 'goreturns', 'gofumpt'],
+        order: 2,
+    },
+    formatOptions: {
+        title: 'Format Options',
+        description: 'Set formatting options for desired tool',
+        type: 'array',
+        default: [],
+        items: {
+            type: 'string',
+        },
+        order: 3,
     }
 }
