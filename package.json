@@ -1,5 +1,5 @@
 {
-    "name": "ide-golang",
+    "name": "atom-ide-golang",
     "main": "./lib/main",
     "version": "0.0.0",
     "description": "Go Language support in Atom using atom-ide-base and gopls",
