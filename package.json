@@ -14,10 +14,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Atrociously/ide-golang"
+        "url": "https://github.com/Atrociously/atom-ide-golang"
     },
     "bugs": {
-        "url": "https://github.com/Atrociously/ide-golang/issues"
+        "url": "https://github.com/Atrociously/atom-ide-golang/issues"
     },
     "license": "MIT",
     "dependencies": {
