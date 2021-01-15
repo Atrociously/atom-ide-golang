@@ -20,7 +20,7 @@ export class GoLanguageClient extends AutoLanguageClient {
     }
 
     public getFileCodeFormat(editor: TextEditor): Promise<atomIde.TextEdit[]> {
-        let formatTool = this.go.tool(util.getPluginConfigValue('formatTool'), [...util.getPluginConfigValue('formatOptions'), editor.getPath()])
+        let formatTool = this.go.tool(util.getPluginConfigValue('formatTool'), [...util.getPluginConfigValue('formatOptions')])
         let newText = ''
         formatTool.stdout.setEncoding('ascii')
         formatTool.stdout.on('data', (data) => {
@@ -28,6 +28,8 @@ export class GoLanguageClient extends AutoLanguageClient {
                 newText += data
             }
         })
+        formatTool.stdin.write(editor.getText())
+        formatTool.stdin.end()
 
         return new Promise((resolve, reject) => {
             formatTool.addListener('error', reject);
