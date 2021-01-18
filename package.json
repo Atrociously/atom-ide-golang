@@ -24,11 +24,11 @@
         "@types/atom": "^1.28.0",
         "@types/node": "^13.1.1",
         "atom-languageclient": "^0.9.9",
+        "atom-ts-transpiler": "^1.5.2",
         "reflect-metadata": "^0.1.12",
         "tsyringe": "^4.0.1"
     },
     "devDependencies": {
-        "atom-ts-transpiler": "^1.5.2",
         "typescript": "^3.2.2"
     },
     "atomTranspilers": [
