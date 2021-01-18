@@ -1,7 +1,7 @@
 # atom-ide-golang Package
 
 Go Language support for [Atom](https://atom.io/) using the official go language server [gopls](https://github.com/golang/tools/tree/master/gopls).
-This also requires [atom-ide-ui](https://atom.io/packages/atom-ide-ui) or other packages that do the same thing.
+This also requires [atom-ide-ui](https://atom.io/packages/atom-ide-ui) or [atom-ide-base](https://atom.io/packages/atom-ide-base) or other packages that do the same thing.
 
 ## Features
 - Code completion
