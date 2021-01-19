@@ -7,8 +7,8 @@ export function parseEnv(source: string) {
 
     for (let v of vars) {
         let parts = v.split('=')
-        let key = parts[0].replace('set', '').trim()
-        let value = parts[1].replace('"', '').trim()
+        let key = parts[0].replace(/set/, '').trim()
+        let value = parts[1].replace(/"/g, '').trim()
         env[key] = value
     }
 

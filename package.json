@@ -20,6 +20,9 @@
         "url": "https://github.com/Atrociously/atom-ide-golang/issues"
     },
     "license": "MIT",
+    "package-deps": [
+        "atom-ide-ui"
+    ],
     "dependencies": {
         "@types/atom": "^1.28.0",
         "@types/node": "^13.1.1",

@@ -48,9 +48,15 @@ export class GoLanguageClient extends AutoLanguageClient {
     public startServerProcess(_projectPath: string): LanguageServerProcess | Promise<LanguageServerProcess> {
         const gopls = this.go.tool('gopls', ['-mode=stdio'], {
             env: process.env,
-        })
+        }) as ChildProcess
         gopls.on('close', () => {
-            console.log(this.processStdErr)
+            if (!gopls.killed) {
+                atom.notifications.addError(`${pkg.name} gopls the go language server exited unexpectedly or did not start`, {
+                    dismissable: true,
+                    description: 'Please make sure you have gopls installed `go get golang.org/x/tools/gopls`',
+                    detail: this.processStdErr
+                })
+            }
         })
         return gopls as LanguageServerProcess
     }
