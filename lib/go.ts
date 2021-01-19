@@ -9,9 +9,6 @@ export class Go extends EventEmitter {
     public constructor() {
         super();
 
-        let emit = this.emit
-        let output = ''
-
         let goEnv = this.spawn(['env'], {async: false}) as cp.SpawnSyncReturns<string>
         if (goEnv.error) {
             atom.notifications.addError(`${pkg.name} unable to get the go env are you sure go is installed?`, {
@@ -34,7 +31,7 @@ export class Go extends EventEmitter {
         return cp.execFile(toolpath, args, options, callback)
     }
 
-    public spawn(args: string[], options) {
+    public spawn(args: string[], options: any) {
         options = options === null || options === undefined ? {} : options
         if ('async' in options) {
             if (options.async) {
