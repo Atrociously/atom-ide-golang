@@ -1,7 +1,7 @@
 {
     "name": "atom-ide-golang",
     "main": "./lib/main",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "Go Language support in Atom using atom-ide-base and gopls",
     "license": "MIT",
     "keywords": [
