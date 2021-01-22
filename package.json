@@ -3,6 +3,7 @@
     "main": "./lib/main",
     "version": "0.1.5",
     "description": "Go Language support in Atom using atom-ide-base and gopls",
+    "license": "MIT",
     "keywords": [
         "ide",
         "golang",
@@ -19,19 +20,13 @@
     "bugs": {
         "url": "https://github.com/Atrociously/atom-ide-golang/issues"
     },
-    "license": "MIT",
     "package-deps": [
         "atom-ide-ui"
     ],
     "dependencies": {
         "@types/atom": "^1.28.0",
-        "@types/node": "^13.1.1",
         "atom-languageclient": "^0.9.9",
         "atom-ts-transpiler": "^1.5.2",
-        "reflect-metadata": "^0.1.12",
-        "tsyringe": "^4.0.1"
-    },
-    "devDependencies": {
         "typescript": "^3.2.2"
     },
     "atomTranspilers": [
