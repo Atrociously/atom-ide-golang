@@ -24,26 +24,8 @@
         "atom-ide-ui"
     ],
     "dependencies": {
-        "@types/atom": "^1.28.0",
-        "atom-languageclient": "^0.9.9",
-        "atom-ts-transpiler": "^1.5.2",
-        "typescript": "^3.2.2"
+        "atom-languageclient": "^0.9.9"
     },
-    "atomTranspilers": [
-        {
-            "transpiler": "atom-ts-transpiler",
-            "glob": "{!(node_modules)/**/,}*.ts?(x)",
-            "options": {
-                "compilerOptions": {
-                    "target": "es6",
-                    "module": "commonjs",
-                    "resolveJsonModule": true
-                },
-                "cacheKeyFiles": [],
-                "verbose": false
-            }
-        }
-    ],
     "enhancedScopes": [
         "source.go",
         "go"
