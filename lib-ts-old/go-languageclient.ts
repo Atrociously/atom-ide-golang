@@ -21,7 +21,7 @@ export class GoLanguageClient extends AutoLanguageClient {
     public async getFileCodeFormat(editor: TextEditor): Promise<atomIde.TextEdit[]> {
         let formatTool = this.go.tool(util.getPluginConfigValue('formatTool'), [...util.getPluginConfigValue('formatOptions')])
         let newText = ''
-        formatTool.stdout.setEncoding('ascii')
+        formatTool.stdout.setEncoding('utf8')
         formatTool.stdout.on('data', (data) => {
             if (data) {
                 newText += data
